@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./HelloWorldAPI
+    image: tfriquet/helloworldapi
+    volumes:  
+      - ./HelloWorldAPI/config.py:/usr/src/app/config.py
+    networks:
+      - app-network
+
+  http:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
