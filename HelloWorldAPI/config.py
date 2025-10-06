@@ -5,4 +5,4 @@ SERVER_HOST = '0.0.0.0'
 SERVER_PORT = 5000
 DEBUG = False
 # CORS Configuration
-ENABLE_CORS = True  # Enable CORS compliancy only if the front app is served by another server (mostly in dev. conf)
+ENABLE_CORS = True  # Activer la conformité CORS uniquement si l'application front est servie par un autre serveur (principalement en configuration dev)
